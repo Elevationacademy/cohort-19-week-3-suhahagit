@@ -1,18 +1,7 @@
-// const postIdCounter = function(posts){
-//     let postsCounter = 0
-//     for (let post in posts)
-//     postsCounter++
-//     return postsCounter
-// }
-
-// let commentIdCounter = function(posts){
-//     let commentCounter = 0
-//     for (let comment in posts.comments)
-
-// }
-
+//Tweeter 
 
 const Tweeter = function () {
+    
     let _posts = [
         {
             text: "First post!",
@@ -23,6 +12,7 @@ const Tweeter = function () {
                 { id: "c3", text: "Third comment on first post!!!" }
             ]
         },
+
         {
             text: "Aw man, I wanted to be first",
             id: "p2",
@@ -40,6 +30,7 @@ const Tweeter = function () {
     const getPosts = function () {
         return _posts
     }
+
     const addPost = function (str) {
         postIdCounter++
         let newPost = {
@@ -49,6 +40,7 @@ const Tweeter = function () {
         }
         _posts.push(newPost)
     }
+
     const removePost = function (postId) {
         for(let post in _posts){
             if(_posts[post].id == postId){
@@ -56,6 +48,7 @@ const Tweeter = function () {
             }
         }
     }
+
     const addComment = function(txt,postId){
         commentIdCounter++
         let newComments = {
@@ -69,6 +62,7 @@ const Tweeter = function () {
             }
         }
     }
+
     const removeComment = function(postId,commentID){
         for(let post of _posts){
             if(postId == post.id){
@@ -80,6 +74,7 @@ const Tweeter = function () {
             }
         }
     }
+    
     return {
         addPost: addPost,
         removePost: removePost,
@@ -107,7 +102,6 @@ tweeter.addComment("Second the best!", "p2")
 console.log(tweeter.getPosts())
 //This should be added to the third post's comments array:
 //{id: "c7", text: "Damn straight it is!"}
-
 //This should be added to the second post's comments array:
 //{id: "c8", text: "Second the best!"}
 
